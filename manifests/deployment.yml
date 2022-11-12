@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "redteam-3e9d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "redteam-3e9d"
+  template:
+    metadata:
+      labels:
+        app: "redteam-3e9d"
+    spec:
+      containers:
+        - name: "redteam-3e9d"
+          image: "redteam.azurecr.io/redteam"
+          ports:
+          - containerPort: 80
